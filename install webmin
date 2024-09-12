@@ -33,7 +33,9 @@ ufw status (firewall kontrol etme)
 ufw allow 10000/tcp (10000 izin verme)
 ufw reload (Firewall kuralları yenileme)
 
-ufw statusufw allow 10000/tcpufw reload
+ufw status
+ufw allow 10000/tcp
+ufw reload
 
 #  https://FQDN:10000 or https://ip-address:10000 
 
