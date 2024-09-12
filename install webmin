@@ -1,0 +1,45 @@
+###############################################  Linux Commands ########################################
+
+
+##SH Konfigürasyon
+
+$ sudo nano /etc/ssh/sshd_config
+
+PermitRootLogin yes
+PasswordAuthentication yes
+
+$ sudo systemctl restart sshd
+
+
+# /etc/ssh/sshd_config dosyasını düzenleyerek PermitRootLogin ve PasswordAuthentication direktiflerini yes olarak ayarlayın.
+
+########    WebMın    https://www.cozumpark.com/ubuntu-20-04-server-uzerine-webmin-kurulum-islemleri/
+
+apt-get install wget apt-transport-https software-properties-common
+
+wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add –
+
+add-apt-repository “deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib”
+
+apt-get install webmin  -y
+
+systemctl status webmin
+systemctl enable webmin
+
+
+ufw status (firewall kontrol etme)
+ufw allow 10000/tcp (10000 izin verme)
+ufw reload (Firewall kuralları yenileme)
+
+ufw statusufw allow 10000/tcpufw reload
+
+#  https://FQDN:10000 or https://ip-address:10000 
+
+####### manuel yukleme           ####
+
+#nano /etc/apt/sources.list
+deb http://download.webmin.com/download/repository sarge contrib
+wget -q -O- http://www.webmin.com/jcameron-key.asc | sudo apt-key add
+apt install -y webmin
+#ufw allow 80
+#ufw allow10000                   “https://ipadresim:10000”
