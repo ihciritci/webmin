@@ -19,7 +19,7 @@ apt-get install wget apt-transport-https software-properties-common
 
 wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add
 
-add-apt-repository “deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib”
+add-apt-repository deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib
 
 apt update  # repo dan sonra yapmalisiniz ki kurulum da nereden indirecegini bilsin  yoksa sadece repoya eklemek ile olmuyor
 
