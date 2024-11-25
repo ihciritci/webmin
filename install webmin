@@ -3,7 +3,10 @@ apt-get install wget apt-transport-https software-properties-common
 
 wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add
 
-add-apt-repository deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib
+curl -fsSL https://download.webmin.com/jcameron-key.asc | sudo gpg --dearmor -o /usr/share/keyrings/webmin.gpg
+
+sudo nano /etc/apt/sources.list
+   deb [signed-by=/usr/share/keyrings/webmin.gpg] http://download.webmin.com/download/repository sarge contrib
 
 apt update  # 
 
