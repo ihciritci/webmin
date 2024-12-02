@@ -1,24 +1,24 @@
 
-apt-get install wget apt-transport-https software-properties-common
+sudo apt-get install wget apt-transport-https software-properties-common -y
 
-wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add
+sudo wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add
 
-curl -fsSL https://download.webmin.com/jcameron-key.asc | sudo gpg --dearmor -o /usr/share/keyrings/webmin.gpg
+sudo curl -fsSL https://download.webmin.com/jcameron-key.asc | sudo gpg --dearmor -o /usr/share/keyrings/webmin.gpg
 
 sudo nano /etc/apt/sources.list
    deb [signed-by=/usr/share/keyrings/webmin.gpg] http://download.webmin.com/download/repository sarge contrib
 
-apt update  # 
+sudo apt update  # 
 
-apt-get install webmin  -y
+sudo apt-get install webmin  -y
 
-systemctl status webmin
-systemctl enable webmin
+sudo systemctl status webmin
+sudo systemctl enable webmin
 
 
-ufw status (firewall kontrol etme)
-ufw allow 10000/tcp (10000 izin verme)
-ufw reload (Firewall kuralları yenileme)
+sudo ufw status (firewall kontrol etme)
+sudo ufw allow 10000/tcp (10000 izin verme)
+sudo ufw reload (Firewall kuralları yenileme)
 
 ufw status
 ufw allow 10000/tcp
