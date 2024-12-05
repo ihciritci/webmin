@@ -8,7 +8,7 @@ sudo curl -fsSL https://download.webmin.com/jcameron-key.asc | sudo gpg --dearmo
 sudo nano /etc/apt/sources.list 
    deb [signed-by=/usr/share/keyrings/webmin.gpg] http://download.webmin.com/download/repository sarge contrib
 # or
-echo'deb [signed-by=/usr/share/keyrings/webmin.gpg] http://download.webmin.com/download/repository sarge contrib' | sudo tee -a /etc/apt/sources.list
+echo 'deb [signed-by=/usr/share/keyrings/webmin.gpg] http://download.webmin.com/download/repository sarge contrib' | sudo tee -a /etc/apt/sources.list
 
 sudo apt update  # 
 
